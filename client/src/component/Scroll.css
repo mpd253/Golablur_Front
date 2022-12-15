@@ -1,0 +1,20 @@
+/* #scroll-horizontal .scroll-horizontal > div {
+    display: grid !important;
+    grid-template-rows : auto auto;
+    grid-auto-flow: column;
+   
+  } */
+  .wrap-vertical{
+    width: 500px;
+    padding: 20px;
+    overflow: scroll;
+    color: #112031;
+    background: #F0D9FF;
+    border: 1px solid #000;
+     /* 가로 스크롤 */
+    overflow: auto;
+    white-space: nowrap;
+  }
+  .wrap-vertical::-webkit-scrollbar{
+    display: none; 
+}

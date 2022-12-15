@@ -1,0 +1,129 @@
+body {
+  background: #EEE;
+  font-family: 'Roboto', sans-serif;
+}
+
+.dropzone {
+  width: 98%;
+  margin: 1%;
+  border: 2px dashed #3498db !important;
+  border-radius: 5px;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.dropzone.dz-drag-hover {
+  border: 2px solid #3498db !important;
+}
+
+.dz-message.needsclick img {
+  width: 50px;
+  display: block;
+  margin: auto;
+  opacity: .6;
+  margin-bottom: 15px;
+}
+
+span.plus {
+  display: none;
+}
+
+.dropzone.dz-started .dz-message {
+  display: inline-block !important;
+  width: 120px;
+  border: 1px solid rgba(238, 238, 238, 0.36);
+  border-radius: 30px;
+  height: 120px;
+  margin: 16px;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.dropzone.dz-started .dz-message span.text {
+  display: none;
+}
+
+.dropzone.dz-started .dz-message span.plus {
+  display: block;
+  font-size: 70px;
+  color: #AAA;
+  line-height: 110px;
+}
+/*# sourceMappingURL=ss.css.map */
+
+@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+@-moz-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+@-webkit-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+@-o-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+
+@keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
+@-moz-keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
+@-webkit-keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
+@-o-keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
+
+#div1 img {
+  -o-transition: all 1.5s;
+  -webkit-transition: all 1.5s;
+  -moz-transition: all 1.5s;
+  -ms-transition: all 1.5s;
+  transition: all 1.5s;
+}
+
+#div1:hover #imgLeft {
+  transform: translateX(-500px);
+}
+
+#div1:hover #imgRight {
+  transform: translateX(500px);
+}
+
+#processImg {
+  opacity: 0;
+}
+
+#div1:hover #processImg {
+  transform: translateY(-444px);
+  opacity: 1;
+}
+
+/* #div1:hover #intro2 {
+  animation: fadein 1.5s;
+  animation-fill-mode: forwards;
+  -moz-animation: fadein 1.5s;
+  -webkit-animation: fadein 1.5s;
+  -o-animation: fadein 1.5s;
+} */
+
+/* #hi {
+  background-size: cover;
+} */
+
+#list{ position: relative; width: 360px; height:360px; margin: 0 20px; display: inline-block; *display: inline; *zoom: 1; border-radius: 20px; color: #fff; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.35); cursor: pointer; transition: background-size 150ms linear, transform 150ms linear, box-shadow 150ms linear;} 
+#list:hover{ background-size: 105% !important;}
+#list:active{ transform: scale(0.975); box-shadow: 0 0 0 rgba(0,0,0,1);}
+#list:before{ position: absolute; content: ''; top:0; left: 0; width: 100%; height:100%; background: rgba(0,0,0,0); backdrop-filter: blur(0); border-radius: 20px; transition: background 150ms linear, backdrop-filter 150ms linear; }
+
+#list:hover:before{ background: rgba(0,0,0,0.65); backdrop-filter: blur(2px); }
+#list:active:before{ background: rgba(0,0,0,0.85); }
+#list h5 { color: #fff; }
+#list h5,
+#list b,
+#list span.info,
+#list span.stack{ position: relative; z-index: 1; opacity: 0; transition: opacity 150ms linear;} 
+#list:hover h5,
+#list:hover b,
+#list:hover span.stack, 
+#list:hover span.info { opacity: 1;}
+#list h5{ margin: 70px 0 30px 0; font-size: 24px; font-weight: 500; text-transform: uppercase;}
+#list h5:before{position: absolute; content: ''; top:38px; left: 50%; margin: 0 0 0 -25px; width: 50px; height: 2px; background: #fff;}
+#list b{ display: block; font-weight: 500; margin: 0 0 15px 0; }
+#list span.info{ position: absolute; display: block; bottom:70px; width: 100%; font-weight: 200; font-size: 16px;}
+#list span.stack{ padding: 20px 30px; display: block; font-weight: 300;}
+
+#mainDrag .ant-upload.ant-upload-drag {
+  width: 432px;
+  height: 348px;
+  border-radius: 20px;
+}
+
+

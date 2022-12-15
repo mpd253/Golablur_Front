@@ -1,0 +1,57 @@
+.w-btn {
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 10px 10px;
+    border-radius: 15px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+.w-btn-outline {
+    position: relative;
+    padding: 10px 10px;
+    border-radius: 35px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.25s;
+    width: 150px;
+}
+.w-btn-green {
+    background-color: #77af9c;
+    color: #d7fff1;
+}
+.w-btn-green-outline {
+    border: 3px solid #77af9c;
+    color: #77af9c;
+}
+.w-btn-green-outline:hover {
+    background-color: #77af9c;
+    color: #d7fff1;
+}
+button {
+    margin: 20px;
+}
+
+.button {
+    color: #fff;
+    background-color: black;
+    border-color: black;
+}
+.w-btn-indigo {
+    background-color: aliceblue;
+    color: #1e6b7b;
+}
+.w-btn-indigo-outline {
+    border: 3px solid aliceblue;
+    color: #1e6b7b;
+}
+.w-btn-indigo-outline:hover {
+    color: #1e6b7b;
+    background: aliceblue;
+}

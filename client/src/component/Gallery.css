@@ -1,0 +1,36 @@
+/* .App {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .seperator {
+    width: 100%;
+  }
+  
+  .controls-wrapper {
+    width: 100%;
+  }
+  
+  .carousel-wrapper {
+    width: 100%;
+  }
+  
+  .rec-carousel-item:focus {
+    outline: none;
+    box-shadow: inset 0 0 1px 0px violet;
+  }
+   */
+
+/* 딥페이크 들어가서 이미지 높이 */
+.carousel-inner {
+  height: 300px;
+}
+
+/* 여러장 이미지 높이 */
+#manyImg .carousel-inner {
+  height: 500px;
+}
