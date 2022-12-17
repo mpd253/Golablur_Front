@@ -25,11 +25,16 @@ function EditButton(props){
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
     
-  
+    function setfiledata(){
+        console.log("editobj",props.items);
+        console.log("editobj",props.data);
+        sessionStorage.setItem("objectfile", JSON.stringify(props.items.file));
+        sessionStorage.setItem("objectList", JSON.stringify(props.data));
+    }
 
     return(
         <>
-           <button class="w-btn-outline w-btn-green-outline" type="button" onClick={()=>{handleShow()}}>
+           <button class="w-btn-outline w-btn-green-outline" type="button" onClick={()=>{handleShow(); setfiledata()} }>
            <img src="img/pencil.png" width="18" height="18"/> &nbsp;Edit&nbsp;&nbsp;
             </button>
 

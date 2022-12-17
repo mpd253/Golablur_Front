@@ -474,7 +474,7 @@ const Canvas = (props) => {
         var params = {
             Body: blobData,
             Bucket: S3_BUCKET,
-            Key: sessionStorage.getItem("id")+"/" + JSON.parse(sessionStorage.getItem('objectfile')).original_File_ID+ "/result/" + sessionStorage.getItem("small_id") + "."+fileExt,
+            Key: sessionStorage.getItem("id")+"/" + JSON.parse(sessionStorage.getItem('objectfile')).file_ID+ "/result/" + sessionStorage.getItem("small_id") + "."+fileExt,
         };
         
         myBucket.upload(params, function(err, data) {
@@ -489,7 +489,7 @@ const Canvas = (props) => {
                 original_File_ID: props.cImg.file.file_ID,
                 real_File_Name: props.cImg.file.real_File_Name,
                 file_Extension: "."+fileExt,
-                path: sessionStorage.getItem("id")+"/" +  JSON.parse(sessionStorage.getItem('objectfile')).original_File_ID+ "/result/" + sessionStorage.getItem("small_id") + "."+fileExt,
+                path: sessionStorage.getItem("id")+"/" +  JSON.parse(sessionStorage.getItem('objectfile')).file_ID+ "/result/" + sessionStorage.getItem("small_id") + "."+fileExt,
             }
         })
         .then((res) => {
@@ -549,7 +549,7 @@ const Canvas = (props) => {
         var params = {
             Body: blobData,
             Bucket: S3_BUCKET,
-            Key: sessionStorage.getItem("id")+"/" +  JSON.parse(sessionStorage.getItem('objectfile')).original_File_ID + "/object/" + sessionStorage.getItem("small_id") + "."+fileExt,
+            Key: sessionStorage.getItem("id")+"/" +  JSON.parse(sessionStorage.getItem('objectfile')).file_ID + "/object/" + sessionStorage.getItem("small_id") + "."+fileExt,
         };
         
         
@@ -566,7 +566,7 @@ const Canvas = (props) => {
             user_ID: sessionStorage.getItem("id"),
             object_Name: "deleteobj",
             file_Extension:"."+fileExt,
-            path:sessionStorage.getItem("id")+"/" +  JSON.parse(sessionStorage.getItem('objectfile')).original_File_ID + "/object/" + sessionStorage.getItem("small_id") + "."+fileExt,
+            path:sessionStorage.getItem("id")+"/" +  JSON.parse(sessionStorage.getItem('objectfile')).file_ID + "/object/" + sessionStorage.getItem("small_id") + "."+fileExt,
             xtl:"0",
             ytl:"0",
             xbr:originImageW,
