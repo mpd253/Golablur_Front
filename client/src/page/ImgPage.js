@@ -75,6 +75,11 @@ function ImagePage(){
         sessionStorage.setItem("objectList", JSON.stringify(data));
         navigate('/objedit');
     }
+    function setfiledata(item){
+        console.log("editobj", item);
+        sessionStorage.setItem("objectfile", JSON.stringify(item.file));
+        sessionStorage.setItem("objectList", JSON.stringify(data));
+    }
     return(
         <Earth>
             <Dragg>
@@ -126,7 +131,7 @@ function ImagePage(){
                 </button>
                 <MosaicButton items={item} delete={data}/>
                 {console.log(item)}
-                <EditButton  items={item}  />
+                <EditButton  items={item}  onClick={()=>setfiledata(item)} />
                 <button class="w-btn-outline w-btn-green-outline" type="button" onClick={()=>{deepfake(item)}}>
                     <img src="img/deepfake.png" width="18" height="18"/>&nbsp;
                     딥페이크</button>

@@ -494,7 +494,7 @@ const Canvas = (props) => {
         })
         .then((res) => {
             console.log(res.data);
-            navigate("/completepage");
+            setTimeout(() => navigate('/completepage'), 2000);
         })
 
     }
@@ -588,7 +588,7 @@ const Canvas = (props) => {
         .then((res) => {
             console.log(res.data);
             setLoading(false);
-            navigate("/completepage");
+            setTimeout(() => navigate('/completepage'), 2000);
        })
     }
 

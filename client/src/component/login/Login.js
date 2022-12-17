@@ -103,8 +103,7 @@ export default function Login() {
             alert("아이디 중복체크를 해주세요");
             return;
         }
-        
-
+         
         axios.post(`${process.env.REACT_APP_LOCAL_URL}user/signup`,null,{
             params:{
                 User_ID:id,

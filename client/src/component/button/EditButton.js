@@ -24,12 +24,12 @@ function EditButton(props){
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
-
+    
   
 
     return(
         <>
-           <button class="w-btn-outline w-btn-green-outline" type="button" onClick={handleShow}>
+           <button class="w-btn-outline w-btn-green-outline" type="button" onClick={()=>{handleShow()}}>
            <img src="img/pencil.png" width="18" height="18"/> &nbsp;Edit&nbsp;&nbsp;
             </button>
 
