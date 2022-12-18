@@ -499,7 +499,7 @@ const Canvas = (props) => {
 
     }
         
-    async function AiApiDownload() {
+     function AiApiDownload() {
         setLoading(true);
         const canvas = canvasRef.current;
         console.log("오냐?????????????//");
@@ -537,7 +537,7 @@ const Canvas = (props) => {
         const unique_id = uuid();
         const small_id = unique_id.slice(0,8) //uuid
         const fileExt =  props.cImg.file.real_File_Name.split('.').pop();
-
+        const objid = sessionStorage.getItem("small_id")
         console.log("AI/API", objID);
 
         
@@ -546,50 +546,72 @@ const Canvas = (props) => {
         var dataUrl = canvasSubmit.toDataURL("images/png");
         var blobData = dataURItoBlob(dataUrl);
         
-        var params = {
+        const params = {
+            ACL: 'public-read',
             Body: blobData,
             Bucket: S3_BUCKET,
-            Key: sessionStorage.getItem("id")+"/" +  JSON.parse(sessionStorage.getItem('objectfile')).file_ID + "/object/" + sessionStorage.getItem("small_id") + "."+fileExt,
+            Key: sessionStorage.getItem("id")+"/" +  props.cImg.file.file_ID + "/object/" +objid + "."+fileExt,
         };
-        
-        
-        myBucket.upload(params, function(err, data) {
-            if(err) { console.log(err, err.stack); }
-            else { console.log(data) 
-              
-            };
-        });
-        const config = {"Content-Type": "application/json"};
-        const data = {
-            object_ID: sessionStorage.getItem("small_id"),
-            file_ID:  props.cImg.file.file_ID,
-            user_ID: sessionStorage.getItem("id"),
-            object_Name: "deleteobj",
-            file_Extension:"."+fileExt,
-            path:sessionStorage.getItem("id")+"/" +  JSON.parse(sessionStorage.getItem('objectfile')).file_ID + "/object/" + sessionStorage.getItem("small_id") + "."+fileExt,
-            xtl:"0",
-            ytl:"0",
-            xbr:originImageW,
-            ybr:originImageH,
-        }
-        await axios.post(`${process.env.REACT_APP_LOCAL_URL}file/loader/save/custom/delete/object`, data, config) 
-        .then((res) => {
-            console.log(res.data);
+        const params2 = {
+            ACL: 'public-read',
+            Body: blobData,
+            Bucket: S3_BUCKET,
+            Key: sessionStorage.getItem("id")+"/" +  props.cImg.file.file_ID + "/object/" +objid+'_mask'+ "."+fileExt,
+        };
+       
+        myBucket.putObject(params2)
+        .on('httpUploadProgress', (evt) => {
+
+        })
+        .send((err) => {
+            if (err) console.log(err)
             
-       })
-
-
-        const config2 = {"Content-Type": "application/json"};
-        const data2 = {
-            file_ID: props.cImg.file.file_ID,
-            object_IDList:[sessionStorage.getItem("small_id")],
-        }
-        await axios.post(`${process.env.REACT_APP_LOCAL_URL}file/process/delete/one/image`, data2, config2) 
-        .then((res) => {
-            console.log(res.data);
-            setLoading(false);
-            setTimeout(() => navigate('/completepage'), 2000);
-       })
+          })
+        
+        myBucket.putObject(params)
+        .on('httpUploadProgress', (evt) => {
+            console.log("progresss",Math.round((evt.loaded / evt.total) * 100))
+                if(Math.round((evt.loaded / evt.total) * 100) === 100){
+                    console.log("complete")
+            
+                const config = {"Content-Type": "application/json"};
+                const datas = {
+                    object_ID: objid,
+                    file_ID:  props.cImg.file.file_ID,
+                    user_ID: sessionStorage.getItem("id"),
+                    object_Name: "deleteobj",
+                    file_Extension:"."+fileExt,
+                    path:sessionStorage.getItem("id")+"/" +  props.cImg.file.file_ID + "/object/" +  objid+ "."+fileExt,
+                    xtl:"0",
+                    ytl:"0",
+                    xbr:originImageW,
+                    ybr:originImageH,
+                }
+               axios.post(`${process.env.REACT_APP_LOCAL_URL}file/loader/save/custom/delete/object`, datas, config) 
+                .then((res) => {
+                    console.log(res.data);
+                    console.log(objid);
+                    const config2 = {"Content-Type": "application/json"};
+                    const data2 = {
+                        file_ID: props.cImg.file.file_ID,
+                        object_IDList:[objid],
+                    }
+                    axios.post(`${process.env.REACT_APP_LOCAL_URL}file/process/delete/one/image`, data2, config2) 
+                    .then((res) => {
+                        console.log(res.data);
+                        setLoading(false);
+                        setTimeout(() => navigate('/completepage'), 2000);
+                })
+               })
+        
+               
+            };
+        })
+        .send((err) => {
+            if (err) console.log(err)
+            
+          })
+        
     }
 
     return (

@@ -62,6 +62,9 @@ function Main(){
               <Top style={{display:'flex',justifyContent:'space-between', alignItems:'center', width:'100%', maxWidth:'1000px'}}>
                   <LeftTop style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', marginBottom:'50px'}}>
                     <Cat></Cat><br/><br/>
+                    {/* <video autoPlay muted loop playsInline width="100%" height="100%" >
+                    <source src="img/main.mp4" type="video/mp4"/>
+                  </video> */}
                     <h1 id="put"style={{fontWeight:700}}>Please put the image<br/> on the screen.</h1>
                   </LeftTop>
                   <RightTop id='mainDrag' style={{display:'flex', flexDirection:'column', alignItems:'center'}}> 
