@@ -1,11 +1,12 @@
-## GolaBlur
+# GolaBlur
 
 ## 소개 (Introduction)
-### 컴퓨터 비전을 활용한 웹 미디어 편집기 서비스 <br /><br />
+#### 컴퓨터 비전을 활용한 웹 미디어 편집기 서비스  
+<br />
 
 ## 주요 기능 (Key Features)
 
-### **Front-End**
+### Front-End
 1. **업로드 기능**
    - Drag & Drop 또는 클릭으로 사진 및 동영상을 업로드 가능
    - 업로드된 **이미지**는 인식한 객체를 **스티커**로 변환
@@ -27,18 +28,18 @@
 4. **완성본 페이지**
    - 모든 작업 결과물을 확인 후 다운로드 가능
    - **로그인 및 소셜 로그인 서비스 제공**
-   - 비로그인 시 작업 데이터는 저장되지 않음
-<br /><br />
+   - 비로그인 시 작업 데이터는 저장되지 않음  
+<br />
 
 ## 기술 스택 (Tech Stack)
 
-### **Front-End**
+#### **Front-End**
 - **프레임워크 및 라이브러리**: React.js, JavaScript, jQuery, React Konva
 - **상태 관리 및 API 통신**: Axios
 - **스타일링**: Styled-components
 - **스토리지**: Amazon S3
 
-### **Back-End**
+#### **Back-End**
 - **언어 및 프레임워크**: Java, Python, Spring Boot, Flask
 - **ORM 및 빌드 도구**: MyBatis, Maven
 - **데이터베이스 및 호스팅**:
@@ -46,7 +47,7 @@
   - **호스팅**: Amazon EC2, Amazon S3
 - **데이터 분석 및 배포 환경**: Anaconda
 
-### **Tool**
+#### **Tool**
 - **협업 및 버전 관리**: GitHub
 - **개발 도구**: IntelliJ, VS Code, Chrome
 - **기획 및 문서화**: Notion
