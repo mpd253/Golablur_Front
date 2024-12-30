@@ -1,3 +1,3 @@
-# Client_Front_deploy
+## GolaBlur
 
-### http://golablur.s3-website.ap-northeast-2.amazonaws.com/
+### 컴퓨터 비전을 활용한 웹 미디어 편집기 서비스
